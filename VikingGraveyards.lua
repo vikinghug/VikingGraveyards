@@ -3,6 +3,12 @@ local addonName, addon = ...
 -- local HBD = LibStub("HereBeDragons-2.0")
 local HBDP = LibStub("HereBeDragons-Pins-2.0")
 
+local playerFaction = UnitFactionGroup("player")
+local faction = {
+  Alliance = 1,
+  Horde = 2,
+}
+
 local frame = CreateFrame("Frame", "VGY_INIT_FRAME")
 frame:RegisterEvent("ADDON_LOADED")
 local function eventHandler(self, event, ...)
@@ -185,7 +191,7 @@ function addon:OnInitialize()
   end
 
   for _, v in pairs(Graveyards) do
-    if (v[2] == 0 or v[2] == 1) then
+    if (v[2] == 0 or v[2] == faction[playerFaction]) then
         local MapPin = CreateFrame("Frame", nil, UIParent)
         MapPin:SetSize(20, 20)
         local t = MapPin:CreateTexture(nil, "ARTWORK")
