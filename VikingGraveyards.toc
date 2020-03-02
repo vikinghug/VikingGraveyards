@@ -3,7 +3,7 @@
 ## Notes: Display locations of all Graveyards on the worldmap
 ## Dependencies:
 ## SavedVariablesPerCharacter:
-## Version: 0.0.1
+## Version: 0.0.2
 
 libs\Libs.xml
 VikingGraveyards.lua
